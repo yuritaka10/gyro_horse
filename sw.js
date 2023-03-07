@@ -1,7 +1,8 @@
 var CACHE_NAME = 'gyro_horse';
 var urlsToCache = [
-    '/js/main.js',
-    '/css/style.css'
+    'main.js',
+    'css/style.css',
+
 ];
 
 // インストール処理
