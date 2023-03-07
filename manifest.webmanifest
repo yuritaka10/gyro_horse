@@ -1,22 +1,22 @@
 {
-    "short_name": "gyro_riding",
-    "name": "gyro_riding",
+    "short_name": "gyro_horse",
+    "name": "gyro_horse",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "gyro_horse/images/icons-192.png",
         "type": "image/png",
         "sizes": "192x192",
         "purpose": "any maskable"
       },
       {
-        "src": "/images/icons-512.png",
+        "src": "gyro_horse/images/icons-512.png",
         "type": "image/png",
         "sizes": "512x512",
         "purpose": "any maskable"
       }
     ],
-    "id": "/?source=pwa",
-    "start_url": "/?source=pwa",
+    "id": "?source=pwa",
+    "start_url": "?source=pwa",
     "background_color": "#3367D6",
     "display": "standalone",
     "scope": "/",
