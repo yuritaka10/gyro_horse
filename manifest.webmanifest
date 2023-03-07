@@ -15,7 +15,6 @@
         "purpose": "any maskable"
       }
     ],
-    "id": "https://yuritaka10.github.io/gyro_hors/=pwa",
     "start_url": "https://yuritaka10.github.io/gyro_horse/",
     "background_color": "#c676f5",
     "display": "standalone",
