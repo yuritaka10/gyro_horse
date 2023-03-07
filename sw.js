@@ -2,7 +2,11 @@ var CACHE_NAME = 'gyro_horse';
 var urlsToCache = [
     'main.js',
     'css/style.css',
-
+    'manifest.webmanifest',
+    'index.html',
+    'jquery.cookies.js',
+    "images/icons-192.png",
+    "images/icons-152.png"
 ];
 
 // インストール処理
