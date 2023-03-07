@@ -11,24 +11,23 @@
 </head>
 <body>
   <div class="btn">ジャイロセンサーを許可</div>
-
   <div class="box">
-    <div class="responsive" >
-        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="responsive" >
+          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-    <div class="bottom-right">
+      <div class="bottom-right">
           <ul class="txt">
           <li class="beta">X軸（-90~270までの値）<span>0</span></li>
           <li class="gamma">Y軸（-90~90までの値）<span>0</span></li>
           <li class="alpha">Z軸（0~360までの値）<span>0</span></li>
           <li class="roll">スマホの向き：<span>縦</span></li>
           </ul>
-    </div>
       </div>
-      <script>
-       Cookies.set('COOKIE_NAME', 'value', {path: '/', expires: 1, samesite: 'None', secure: true});
-      </script>
-</body>
+  </div>
+
+  <script>
+  $.cookie("name", "value", {expires: 365, path: "/", sameSite: "lax"});      </script> 
+  </body>
 
 <script>
   // ジャイロセンサーが使用可能だったら
