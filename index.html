@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gyro horse</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <div class="btn">ジャイロセンサーを許可</div>
+
+  <div class="box">
+    <div class="responsive" >
+        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="bottom-right">
+          <ul class="txt">
+          <li class="beta">X軸（-90~270までの値）<span>0</span></li>
+          <li class="gamma">Y軸（-90~90までの値）<span>0</span></li>
+          <li class="alpha">Z軸（0~360までの値）<span>0</span></li>
+          <li class="roll">スマホの向き：<span>縦</span></li>
+          </ul>
+    </div>
+
+      </div>
+</body>
+<script src="./js/main.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/color-name/sw.js').then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+  }
+</script>
+</html>
