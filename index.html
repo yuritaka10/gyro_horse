@@ -34,7 +34,7 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         // 下のsw.jsは/つけると最初の読み込みでエラー出る。
-        navigator.serviceWorker.register('sw.js').then(function(registration) {
+        navigator.serviceWorker.register('./sw.js').then(function(registration) {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
           console.log('ServiceWorker registration failed: ', err);
