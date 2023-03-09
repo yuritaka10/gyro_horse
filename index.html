@@ -13,13 +13,18 @@
     <script>// Set a cross-site cookie for third-party contexts
      document.cookie = 'cookie1=value1; SameSite=None; Secure';
      </script>
-
+    <script>
+     $(window).resize(function() {
+      //ここにブラウザのウィンドウがリサイズされたときに処理する内容を記述
+      });
+    
+    </script>
 </head>
 <body>
   <div class="btn">ジャイロセンサーを許可</div>
   <div class="box">
       <div class="responsive" >
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
       <div class="bottom-right">
           <ul class="txt">
@@ -33,8 +38,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        // 下のsw.jsは/つけると最初の読み込みでエラー出る。
-        navigator.serviceWorker.register('./sw.js').then(function(registration) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
           console.log('ServiceWorker registration failed: ', err);
