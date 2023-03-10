@@ -16,9 +16,9 @@
       }
     ],
     "start_url": "https://yuritaka10.github.io/gyro_horse/",
-    "background_color": "#c676f5",
+    "background_color": "#181818",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#c676f5",
+    "theme_color": "#181818",
     "description": "Virtual horse riding experience"
   }
