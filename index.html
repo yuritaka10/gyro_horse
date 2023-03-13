@@ -78,7 +78,7 @@ if(window.DeviceOrientationEvent){
     // Z軸（0~360までの値）
     $(".alpha span").text(alpha);
     // 傾きアニメーション
-    $(".sensor_img > span").css({transform: 'perspective(1200px) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg) rotateZ(' + alpha + 'deg)'});
+    $(".sensor_img > span").css({transform: 'perspective(1200px) rotateX(' + (-beta) + 'deg) rotateY(' + (-gamma) + 'deg) rotateZ(' + (-alpha) + 'deg)'});
     // スマホの向き
     if(beta < 10) {
       $(".roll span").text("横");
