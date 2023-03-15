@@ -102,6 +102,10 @@ li{
 
   /* センサー値ビジュアライズ */
 
+  .gyro_test{
+    position: relative;
+  }
+
   .rotation_x {
     position: absolute;
     bottom: 170px;
