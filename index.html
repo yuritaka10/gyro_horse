@@ -50,12 +50,13 @@
       <dev class="rotation_x">X軸</dev>
       <dev class="rotation_y">Y軸</dev>
       <dev class="rotation_z">Z軸</dev>
+      <dev class="rotation">全部</dev>
       
 
   </div>
   
 
-  <!-- <div class="demo1">
+  <div class="demo1">
     <div class="btn">加速度センサーを許可</div>
     <p>左・右の傾き判定</p>
     <div class="tilt">
@@ -63,11 +64,11 @@
     <p>奥・手前の傾き判定</p>
     <div class="depth">
     <span>手前</span><span>奥</span></div>
-    <ul class="txt">
+    <ul class="ac_txt">
     <li class="result_acc"><span>0</span></li>
     </ul>
     </div>
-  </body> -->
+  </body>
 
 <script>
 // ジャイロセンサーが使用可能だったら
@@ -105,10 +106,10 @@ if(window.DeviceOrientationEvent){
     $(".alpha span").text(alpha);
     // // 傾きアニメーション
     // $(".sensor_img > span").css({transform: 'perspective(1200px) rotateX(' + (-beta) + 'deg) rotateY(' + (-gamma) + 'deg) rotateZ(' + (-alpha) + 'deg)'});
-    $(".rotation_x").css({transform: 'perspective(1200px) rotateX(' + (-beta) + 'deg)'});
-    $(".rotation_y").css({transform: 'perspective(1200px) rotateY(' + (-gamma) + 'deg)'});
-    $(".rotation_z").css({transform: 'perspective(1200px) rotateZ(' + (-alpha) + 'deg)'});
-    // $(".rotation").css({transform: 'perspective(1200px) rotateX(' + (-beta) + 'deg) rotateY(' + (-gamma) + 'deg) rotateZ(' + (-alpha) + 'deg)'});
+    $(".rotation_x").css({transform: 'rotateX(' + (-beta) + 'deg)'});
+    $(".rotation_y").css({transform: 'rotateY(' + (-gamma) + 'deg)'});
+    $(".rotation_z").css({transform: 'rotateZ(' + (-alpha) + 'deg)'});
+    $(".rotation").css({transform: 'rotateX(' + (-beta) + 'deg) rotateY(' + (-gamma) + 'deg) rotateZ(' + (-alpha) + 'deg)'});
     // スマホの向き
     if(beta < 10) {
       $(".roll span").text("横");
@@ -117,30 +118,30 @@ if(window.DeviceOrientationEvent){
     }
   }
 
-//   // 加速度センサーの値を利用
-// function acceleration(){
-//   // 加速度センサーの値を各変数に格納（値が小さく比較しずらいので100倍に）
-//     var x = 100 * event.accelerationIncludingGravity.x;
-//     var z = 100 * event.accelerationIncludingGravity.z;
-//     var y = 100 * event.accelerationIncludingGravity.y;
-// // 右・左の判定
-//     if(x < 0) {
-//     $(".tilt span").removeClass("color");
-//     $(".tilt span").eq(0).addClass("color");
-//     }else{
-//     $(".tilt span").removeClass("color");
-//     $(".tilt span").eq(1).addClass("color");
-//     }
-// // 手前・奥の判定
-//     if(z < 0) {
-//       $(".depth span").removeClass("color");
-//       $(".depth span").eq(1).addClass("color");
-//     }else{
-//     $(".depth span").removeClass("color");
-//     $(".depth span").eq(0).addClass("color");
-//     }
-//     $(".result_acc span").html("加速度<br />" + "X:" + x.toFixed(2) + "<br />" + "Y:" + y.toFixed(2) +"<br />" + "Z:" + z.toFixed(2) +"<br />");
-//     }
+  // 加速度センサーの値を利用
+function acceleration(){
+  // 加速度センサーの値を各変数に格納（値が小さく比較しずらいので100倍に）
+    var x = 100 * event.accelerationIncludingGravity.x;
+    var z = 100 * event.accelerationIncludingGravity.z;
+    var y = 100 * event.accelerationIncludingGravity.y;
+// 右・左の判定
+    if(x < 0) {
+    $(".tilt span").removeClass("color");
+    $(".tilt span").eq(0).addClass("color");
+    }else{
+    $(".tilt span").removeClass("color");
+    $(".tilt span").eq(1).addClass("color");
+    }
+// 手前・奥の判定
+    if(z < 0) {
+      $(".depth span").removeClass("color");
+      $(".depth span").eq(1).addClass("color");
+    }else{
+    $(".depth span").removeClass("color");
+    $(".depth span").eq(0).addClass("color");
+    }
+    $(".result_acc span").html("加速度<br />" + "X:" + x.toFixed(2) + "<br />" + "Y:" + y.toFixed(2) +"<br />" + "Z:" + z.toFixed(2) +"<br />");
+    }
 
 
 </script>
