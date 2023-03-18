@@ -7,7 +7,6 @@ body{
     /* youtube画面いっぱい */
     padding: 0;
     margin: 0;
-    object-fit: cover;
     box-sizing: border-box;
     overflow-wrap: break-word;
 }
@@ -17,8 +16,9 @@ body{
 
 /* Youtubeのレスポンシブ化 */
 .youtube-wrapper{
-    width:100%;
-    height:0;
+    /* width:100%;
+    height:0; */
+    object-fit: cover;
     padding-bottom:56.25%;
     position:relative
     }
