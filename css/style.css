@@ -7,32 +7,12 @@ body{
     /* youtube画面いっぱい */
     padding: 0;
     margin: 0;
+    object-fit: cover;
     box-sizing: border-box;
     overflow-wrap: break-word;
 }
 
-/* iframeをレスポンシブで調べたやつ */
-/* .responsive {
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-}
 
-.responsive iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-} */
-
-/* 元のやつ */
-/* .responsive {
-    width: 100%;
-    aspect-ratio: 16/9;
-    } */
 
 
 /* Youtubeのレスポンシブ化 */
