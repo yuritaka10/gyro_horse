@@ -55,6 +55,7 @@
         $('body').html
         (`
         <div class="btn">ジャイロセンサーを許可</div>
+        <script>
         // ジャイロセンサーが使用可能だったら
           if(window.DeviceOrientationEvent){
             // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
@@ -62,21 +63,22 @@
                   $(".btn").on("click", function(){
                   // ジャイロセンサーへのアクセス許可を申請する
                     DeviceOrientationEvent.requestPermission().then(function(response){
-        // リクエストが許可されたら
-          if(response === "granted"){
-        // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-          $(window).on("deviceorientation", gyro);
-            }
-          });
-        });
+                      // リクエストが許可されたら
+                        if(response === "granted"){
+                            // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+                              $(window).on("deviceorientation", gyro);
+                        }
+                    });
+                });
         // アクセスの許可を求める関数がなかったら
-      }else{
-        // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-        $(window).on("deviceorientation", gyro);
-      }
-    }
-
+          }else{
+              // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+              $(window).on("deviceorientation", gyro);
+              }
+            }
+        </script> 
         ` );
+        
       }
       else if (window.innerWidth > window.innerHeight)
       {
