@@ -7,9 +7,9 @@
     <meta name="theme-color" content="#181818">
     <title>gyro horse</title>
     <link rel="stylesheet" href="">
-    <!-- <link
+    <link
        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"> -->
+        href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>    <script>// Set a cross-site cookie for third-party contexts
       document.cookie = 'cookie1=value1; SameSite=None; Secure';
@@ -28,6 +28,53 @@
         });
       });
     }
+
+    // // ジャイロセンサー関連
+    // // ジャイロセンサーが使用可能だったら
+    // if(window.DeviceOrientationEvent){
+    //   // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
+    //   if(DeviceOrientationEvent.requestPermission){
+    //     $(".btn").on("click", function(){
+    //       // ジャイロセンサーへのアクセス許可を申請する
+    //       DeviceOrientationEvent.requestPermission().then(function(response){
+    //         // リクエストが許可されたら
+    //         if(response === "granted"){
+    //         // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+    //         $(window).on("deviceorientation", gyro);
+    //         }
+    //       });
+    //     });
+    //     // アクセスの許可を求める関数がなかったら
+    //   }else{
+    //     // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+    //     $(window).on("deviceorientation", gyro);
+    //   }
+    // }
+
+    $(function() {
+  // ジャイロセンサーが使用可能だったら
+  if(window.DeviceOrientationEvent){
+    // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
+    if(DeviceOrientationEvent.requestPermission){
+      // ウェブページが読み込まれたら
+      $(window).on("load", function(){
+        // ジャイロセンサーへのアクセス許可を申請する
+        DeviceOrientationEvent.requestPermission().then(function(response){
+          // リクエストが許可されたら
+          if(response === "granted"){
+          // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+          $(window).on("deviceorientation", gyro);
+          }
+        });
+      });
+      // アクセスの許可を求める関数がなかったら
+    }else{
+      // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+      $(window).on("deviceorientation", gyro);
+    }
+  }
+});
+
 
     //画面縦横切り替え
     $(window).resize(function() 
@@ -48,7 +95,7 @@
       if (window.innerWidth < window.innerHeight)
       {
         console.log("縦画面");
-        $('body').html
+        $('body.btn').html
         (`<div class="btn">ジャイロセンサーを許可</div>` );
       }
       else if (window.innerWidth > window.innerHeight)
@@ -80,6 +127,7 @@
 
 
 <body>
+<div class="btn"></div>
 <!-- <div class="tate_ui"></div>
 <div class="yoko_ui"></div> -->
 
@@ -107,27 +155,7 @@
   </body> -->
 
 <script>
-  // ジャイロセンサー関連
-      // ジャイロセンサーが使用可能だったら
-      if(window.DeviceOrientationEvent){
-        // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
-        if(DeviceOrientationEvent.requestPermission){
-          $(".btn").on("click", function(){
-            // ジャイロセンサーへのアクセス許可を申請する
-            DeviceOrientationEvent.requestPermission().then(function(response){
-              // リクエストが許可されたら
-              if(response === "granted"){
-              // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-              $(window).on("deviceorientation", gyro);
-              }
-            });
-          });
-          // アクセスの許可を求める関数がなかったら
-        }else{
-          // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-          $(window).on("deviceorientation", gyro);
-        }
-      }
+
 
         // 値の処理
         function gyro(){
