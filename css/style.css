@@ -16,9 +16,8 @@ body{
 
 /* Youtubeのレスポンシブ化 */
 .youtube-wrapper{
-    /* width:100%;
-    height:0; */
-    object-fit: cover;
+    width:100%;
+    height:0;
     padding-bottom:56.25%;
     position:relative
     }
@@ -29,7 +28,9 @@ body{
     top:0;
     left:0;
     }
-
+#player{
+        object-fit: cover;
+}
 
 
 /* 確認ボタン */
