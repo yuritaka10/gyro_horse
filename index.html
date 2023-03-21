@@ -29,51 +29,8 @@
       });
     }
 
-    // // ジャイロセンサー関連
-    // // ジャイロセンサーが使用可能だったら
-    // if(window.DeviceOrientationEvent){
-    //   // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
-    //   if(DeviceOrientationEvent.requestPermission){
-    //     $(".btn").on("click", function(){
-    //       // ジャイロセンサーへのアクセス許可を申請する
-    //       DeviceOrientationEvent.requestPermission().then(function(response){
-    //         // リクエストが許可されたら
-    //         if(response === "granted"){
-    //         // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-    //         $(window).on("deviceorientation", gyro);
-    //         }
-    //       });
-    //     });
-    //     // アクセスの許可を求める関数がなかったら
-    //   }else{
-    //     // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-    //     $(window).on("deviceorientation", gyro);
-    //   }
-    // }
 
-    $(function() {
-  // ジャイロセンサーが使用可能だったら
-  if(window.DeviceOrientationEvent){
-    // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
-    if(DeviceOrientationEvent.requestPermission){
-      // ウェブページが読み込まれたら
-      $(window).on("load", function(){
-        // ジャイロセンサーへのアクセス許可を申請する
-        DeviceOrientationEvent.requestPermission().then(function(response){
-          // リクエストが許可されたら
-          if(response === "granted"){
-          // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-          $(window).on("deviceorientation", gyro);
-          }
-        });
-      });
-      // アクセスの許可を求める関数がなかったら
-    }else{
-      // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
-      $(window).on("deviceorientation", gyro);
-    }
-  }
-});
+
 
 
     //画面縦横切り替え
@@ -96,13 +53,38 @@
       {
         console.log("縦画面");
         $('body').html
-        (`<div class="btn">ジャイロセンサーを許可</div>` );
+        (`
+        <div class="btn">ジャイロセンサーを許可</div>
+        // ジャイロセンサーが使用可能だったら
+          if(window.DeviceOrientationEvent){
+            // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
+              if(DeviceOrientationEvent.requestPermission){
+                  $(".btn").on("click", function(){
+                  // ジャイロセンサーへのアクセス許可を申請する
+                    DeviceOrientationEvent.requestPermission().then(function(response){
+        // リクエストが許可されたら
+          if(response === "granted"){
+        // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+          $(window).on("deviceorientation", gyro);
+            }
+          });
+        });
+        // アクセスの許可を求める関数がなかったら
+      }else{
+        // 回転や傾きの変化を検知する「deviceorientation」を使い、「gyro()」を実行
+        $(window).on("deviceorientation", gyro);
+      }
+    }
+
+        ` );
       }
       else if (window.innerWidth > window.innerHeight)
       {
         console.log("横画面");
         $('body').html
-        (` <div class="box">
+        (`
+        
+        <div class="box">
             <div class="youtube-wrapper" >
               <iframe  src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
@@ -127,31 +109,8 @@
 
 
 <body>
-<!-- <div class="tate_ui"></div>
-<div class="yoko_ui"></div> -->
-
-  <!-- <div class="gyro_test">
-    <dev class="rotation_x">X軸</dev>
-    <dev class="rotation_y">Y軸</dev>
-    <dev class="rotation_z">Z軸</dev>
-    <dev class="rotation">全部</dev>
-</div> -->
 
 
-
-  <!-- <div class="demo1">
-    <div class="btn">加速度センサーを許可</div>
-    <p>左・右の傾き判定</p>
-    <div class="tilt">
-    <span>右</span><span>左</span></div>
-    <p>奥・手前の傾き判定</p>
-    <div class="depth">
-    <span>手前</span><span>奥</span></div>
-    <ul class="ac_txt">
-    <li class="result_acc"><span>0</span></li>
-    </ul>
-    </div>
-  </body> -->
 
 <script>
 
@@ -182,58 +141,6 @@
             $(".roll span").text("縦");
           }
         }
-
-
-
-
-
-// // 加速度センサー関連
-//         // 加速度センサーが使用可能だったら
-//         if(window.DeviceOrientationEvent){
-//         //  ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
-//         if(DeviceOrientationEvent.requestPermission){
-//             $(".btn").on("click", function(){
-//         // 加速度センサーへのアクセス許可を申請する
-//             DeviceOrientationEvent.requestPermission().then(function(response){
-//         // リクエストが許可されたら
-//             if(response === "granted"){
-//         // 傾きの変化を検知する「devicemotion」を使い、「acceleration()」を実行
-//             $(window).on("devicemotion", acceleration);
-//             }
-//             });
-//             });
-//         // アクセスの許可を求める関数がなかったら
-//            }else{
-//         // 回転や傾きの変化を検知する「devicemotion」を使い、「acceleration()」を実行
-//             $(window).on("devicemotion", acceleration);
-//             }
-//             }
-
-//   // 加速度センサーの値を利用
-// function acceleration(){
-//   // 加速度センサーの値を各変数に格納（値が小さく比較しずらいので100倍に）
-//     var x = 100 * event.accelerationIncludingGravity.x;
-//     var z = 100 * event.accelerationIncludingGravity.z;
-//     var y = 100 * event.accelerationIncludingGravity.y;
-// // 右・左の判定
-//     if(x < 0) {
-//     $(".tilt span").removeClass("color");
-//     $(".tilt span").eq(0).addClass("color");
-//     }else{
-//     $(".tilt span").removeClass("color");
-//     $(".tilt span").eq(1).addClass("color");
-//     }
-// // 手前・奥の判定
-//     if(z < 0) {
-//       $(".depth span").removeClass("color");
-//       $(".depth span").eq(1).addClass("color");
-//     }else{
-//     $(".depth span").removeClass("color");
-//     $(".depth span").eq(0).addClass("color");
-//     }
-//     $(".result_acc span").html("加速度<br />" + "X:" + x.toFixed(2) + "<br />" + "Y:" + y.toFixed(2) +"<br />" + "Z:" + z.toFixed(2) +"<br />");
-//     }
-
 
 </script>
 
