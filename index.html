@@ -36,6 +36,7 @@
 </head>
 <body>
    <div class="btn">ジャイロセンサーを許可</div>
+   <div class="yoko_ui"></div>
 
    <script>
 // ジャイロセンサーが使用可能だったら
@@ -115,7 +116,7 @@ if(window.DeviceOrientationEvent){
      {
        console.log("横画面");
        // $(".btn").remove();
-       $('body').html
+       $('.yoko_ui').html
        (`
        
        <div class="box">
