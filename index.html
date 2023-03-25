@@ -50,14 +50,14 @@
     <p class="m-title">GoPro: 3rd Place!! Renkum Corsair (Open Intermediate | 2023 Rocking Horse Winter II Horse Trials)
     </p>
     <div class="btn gyro">ジャイロセンサーを許可</div>
-    <div class="btn">10秒後に再生開始</div>
+    <div class="btn" id="play">10秒後に再生開始</div>
   </main>
   </div>
 
    <div class="yoko_ui">
     <div class="box">
       <div class="youtube-wrapper" >
-        <iframe  src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
 
     <div class="bottom-right">
@@ -70,12 +70,14 @@
         </div>
     </div>
    </div>
+
+
+
    <script src="main.js"></script>
    <script>
+
+
           //画面縦横切り替え
-
-
-
 
    $(window).resize(function() 
    {
@@ -95,15 +97,15 @@
      if (window.innerWidth < window.innerHeight)
      {
        console.log("縦画面");
-       $(".tate_ui").css("display", "block");
-       $(".yoko_ui").css("display", "none");
+      //  $(".tate_ui").css("display", "block");
+      //  $(".yoko_ui").css("display", "none");
 
      }
      else if (window.innerWidth > window.innerHeight)
      {
        console.log("横画面");
-       $(".yoko_ui").css("display", "block");
-       $(".tate_ui").css("display", "none");
+      //  $(".yoko_ui").css("display", "block");
+      //  $(".tate_ui").css("display", "none");
 
      }
    }
