@@ -78,6 +78,7 @@
 
 $(function() {
   $('#play-btn').click(function() {
+    alert("横画面にすると再生画面に");
     setTimeout(function() {
       $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     }, 10000); // 10秒待機
@@ -86,36 +87,59 @@ $(function() {
 
 //画面縦横切り替え
 
-   $(window).resize(function() 
-   {
-     timer = setTimeout(function() 
-     {
-       width_display();
-     }, 200);
-   });
+  //  $(window).resize(function() 
+  //  {
+  //    timer = setTimeout(function() 
+  //    {
+  //      width_display();
+  //    }, 200);
+  //  });
 
-   $(document).ready(function()
-   {
-     width_display();
-   });
+  //  $(document).ready(function()
+  //  {
+  //    width_display();
+  //  });
 
-   function width_display()
-   {
-     if (window.innerWidth < window.innerHeight)
-     {
-       console.log("縦画面");
+  //  function width_display()
+  //  {
+  //    if (window.innerWidth < window.innerHeight)
+  //    {
+  //      console.log("縦画面");
+  //      $(".tate_ui").css("display", "block");
+  //      $(".yoko_ui").css("display", "none");
+
+  //    }
+  //    else if (window.innerWidth > window.innerHeight)
+  //    {
+  //      console.log("横画面");
+  //      $(".yoko_ui").css("display", "block");
+  //      $(".tate_ui").css("display", "none");
+
+  //    }
+  //  }
+
+
+   $(window).on("orientationchange", function() {
+  var orientation = window.orientation;
+  switch (orientation) {
+    case 0:
+    case 180:
+      // 縦向きのときの処理
+             console.log("縦画面");
        $(".tate_ui").css("display", "block");
        $(".yoko_ui").css("display", "none");
 
-     }
-     else if (window.innerWidth > window.innerHeight)
-     {
-       console.log("横画面");
+      break;
+    case 90:
+    case -90:
+      // 横向きのときの処理
+             console.log("横画面");
        $(".yoko_ui").css("display", "block");
        $(".tate_ui").css("display", "none");
+      break;
+  }
+});
 
-     }
-   }
  </script>
 
 </body>
