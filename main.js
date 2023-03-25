@@ -2,7 +2,7 @@
 if(window.DeviceOrientationEvent){
     // ユーザーにアクセスの許可を求める関数があったら（iOS13以降の対応）
     if(DeviceOrientationEvent.requestPermission){
-      $(".gyro_btn").on("click", function(){
+      $("gyro").on("click", function(){
         // ジャイロセンサーへのアクセス許可を申請する
         DeviceOrientationEvent.requestPermission().then(function(response){
           // リクエストが許可されたら
