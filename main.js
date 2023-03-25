@@ -1,6 +1,3 @@
-$(".gyro").on("click", function(){
-    alert("ボタンクリックされたよ");
-})
 
 // ジャイロセンサーが使用可能だったら
 if(window.DeviceOrientationEvent){
