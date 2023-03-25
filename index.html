@@ -70,12 +70,11 @@
         </div>
     </div>
    </div>
-
    <script src="main.js"></script>
    <script>
-
-
           //画面縦横切り替え
+
+
 
 
    $(window).resize(function() 
@@ -96,11 +95,16 @@
      if (window.innerWidth < window.innerHeight)
      {
        console.log("縦画面");
+       $(".tate_ui").css("display", "block");
+       $(".yoko_ui").css("display", "none");
 
      }
      else if (window.innerWidth > window.innerHeight)
      {
        console.log("横画面");
+       $(".yoko_ui").css("display", "block");
+       $(".tate_ui").css("display", "none");
+
      }
    }
  </script>
