@@ -101,11 +101,8 @@ li{
     position: relative;
   }
   .bottom-right {
-    position: absolute;
-    bottom: 60px;
+    position: fixed;
+    bottom: 40px;
     right: 30px;
   }
 
-
-
-  /* センサー値ビジュアライズ */
