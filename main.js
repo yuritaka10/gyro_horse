@@ -41,15 +41,44 @@ if(window.DeviceOrientationEvent){
     
 
 //ジャイロ可視化
-//X軸（左右）
-    if (beta > -4 && beta < 4) {
-      $(".left").css({
-        position: "fixed",
-        width: "80px",
-        height: "100%",
-        background: "transparent"
-      });
 
+//X軸（左）
+  if (beta > -4) {
+    $(".left").css({
+      position: "fixed",
+      width: "80px",
+      height: "100%",
+      background: "transparent"
+    });
+
+  } else if (beta >= -5 && beta <= -8) {
+    $(".left").css({
+      position: "fixed",
+      width: "80px",
+      height: "100%",
+      background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))"
+    });
+
+  } else if (beta >= -9 && beta <= -14) {
+    $(".left").css({
+      position: "fixed",
+      width: "80px",
+      height: "100%",
+      background: "linear-gradient(to right, rgba(255,215,0,1), rgba(255,215,0,0))"
+    });
+
+  } else if (beta <= -15) {
+  $(".left").css({
+    position: "fixed",
+    width: "80px",
+    height: "100%",
+    background: "linear-gradient(to right, rgba(255,87,51,1), rgba(255,87,51,0))"
+  });
+}
+
+
+  //X軸（右）
+  if (beta < 4) {
       $(".right").css({
         position: "fixed",
         width: "80px",
@@ -57,14 +86,7 @@ if(window.DeviceOrientationEvent){
         right: "0",
         background: "transparent"
       });
-    } else if (beta >= -5 && beta <= -8 || beta >= 5 && beta <= 8) {
-      $(".left").css({
-        position: "fixed",
-        width: "80px",
-        height: "100%",
-        background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))"
-      });
-
+  } else if (beta >= 5 && beta <= 8) {
       $(".right").css({
         position: "fixed",
         width: "80px",
@@ -72,15 +94,7 @@ if(window.DeviceOrientationEvent){
         right: "0",
         background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))"
       });
-  
-    } else if (beta >= -9 && beta <= -14 || beta >= 9 && beta <= 14) {
-      $(".left").css({
-        position: "fixed",
-        width: "80px",
-        height: "100%",
-        background: "linear-gradient(to right, rgba(255,215,0,1), rgba(255,215,0,0))"
-      });
-
+  } else if (beta >= 9 && beta <= 14) {
       $(".right").css({
         position: "fixed",
         width: "80px",
@@ -88,15 +102,7 @@ if(window.DeviceOrientationEvent){
         right: "0",
         background: "linear-gradient(to left, rgba(255,215,0,1), rgba(255,215,0,0))"
       });
-
-    } else if (beta <= -15 || beta >= 15) {
-    $(".left").css({
-      position: "fixed",
-      width: "80px",
-      height: "100%",
-      background: "linear-gradient(to right, rgba(255,87,51,1), rgba(255,87,51,0))"
-    });
-
+  } else if (beta >= 15) {
     $(".right").css({
       position: "fixed",
       width: "80px",
@@ -104,12 +110,10 @@ if(window.DeviceOrientationEvent){
       right: "0",
       background: "linear-gradient(to left, rgba(255,87,51,1), rgba(255,87,51,0))"
     });
-  }
+    }
 
-
-
-// Y軸（上下）
-if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
+// Y軸（上）
+if (gamma >= 82 && gamma <= 90) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -117,14 +121,7 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     background: "transparent"
   });
 
-  $(".bottom").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    bottom: "0",
-    background: "transparent"
-  });
-} else if (gamma <= -81 && gamma >= -75 || gamma >= 75 && gamma <= 81) {
+} else if (gamma >= 75 && gamma <= 81) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -132,6 +129,33 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
+} else if (gamma >= 70 && gamma <= 74) {
+  $(".top").css({
+    position: "fixed",
+    width: "100%",
+    height: "80px",
+    background: "linear-gradient(to bottom, rgba(255,215,0,1), rgba(255,215,0,0))"
+  });
+
+} else if (gamma >= 69) {
+  $(".top").css({
+    position: "fixed",
+    width: "100%",
+    height: "80px",
+    background: "linear-gradient(to bottom, rgba(255,87,51,1), rgba(255,87,51,0))"
+  });
+}
+
+// Y軸（上下）
+if (gamma <= -82 && gamma >= -90) {
+  $(".bottom").css({
+    position: "fixed",
+    width: "100%",
+    height: "80px",
+    bottom: "0",
+    background: "transparent"
+  });
+} else if (gamma <= -81 && gamma >= -75) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -140,14 +164,7 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
-} else if (gamma <= -74 && gamma >= -70 || gamma >= 70 && gamma <= 74) {
-  $(".top").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    background: "linear-gradient(to bottom, rgba(255,215,0,1), rgba(255,215,0,0))"
-  });
-
+} else if (gamma <= -74 && gamma >= -70) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -156,14 +173,7 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to top, rgba(255,215,0,1), rgba(255,215,0,0))"
   });
 
-} else if (gamma <= -69 || gamma >= 69) {
-  $(".top").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    background: "linear-gradient(to bottom, rgba(255,87,51,1), rgba(255,87,51,0))"
-  });
-
+} else if (gamma <= -69) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -172,9 +182,6 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to top, rgba(255,87,51,1), rgba(255,87,51,0))"
   });
 }
-
-
-
     }
   
 
@@ -182,7 +189,7 @@ if (gamma <= -82 && gamma >= -90 || gamma >= 82 && gamma <= 90) {
     // 10秒後に動画を再生
 $(function() {
   $('#play-btn').click(function() {
-    alert("画面の向きのロックを解除して、横画面にしてください");
+    alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
     setTimeout(function() {
       $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
     }, 10000); // 10秒待機
