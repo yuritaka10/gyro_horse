@@ -123,7 +123,7 @@ if(window.DeviceOrientationEvent){
     }
 
 // Y軸（上）
-if (gamma >= 82 && gamma <= 90) {
+if (gamma >= 85 && gamma <= 89) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -131,7 +131,7 @@ if (gamma >= 82 && gamma <= 90) {
     background: "transparent"
   });
 
-} else if (gamma >= 75 && gamma <= 81) {
+} else if (gamma >= 81 && gamma <= 84) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -139,7 +139,7 @@ if (gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
-} else if (gamma >= 70 && gamma <= 74) {
+} else if (gamma >= 75 && gamma <= 80) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -147,7 +147,7 @@ if (gamma >= 82 && gamma <= 90) {
     background: "linear-gradient(to bottom, rgba(255,215,0,1), rgba(255,215,0,0))"
   });
 
-} else if (gamma >= 69) {
+} else if (gamma >= 74) {
   $(".top").css({
     position: "fixed",
     width: "100%",
@@ -157,7 +157,7 @@ if (gamma >= 82 && gamma <= 90) {
 }
 
 // Y軸（下）
-if (gamma <= -90 && gamma >= -82) {
+if (gamma >= -89 && gamma <= -85) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -165,7 +165,7 @@ if (gamma <= -90 && gamma >= -82) {
     bottom: "0",
     background: "transparent"
   });
-} else if (gamma <= -75 && gamma >= -81) {
+} else if (gamma >= -84 && gamma <= -81) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -174,7 +174,7 @@ if (gamma <= -90 && gamma >= -82) {
     background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
-} else if (gamma <= -70 && gamma >= -74) {
+} else if (gamma >= -80 && gamma <= -75) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -183,7 +183,7 @@ if (gamma <= -90 && gamma >= -82) {
     background: "linear-gradient(to top, rgba(255,215,0,1), rgba(255,215,0,0))"
   });
 
-} else if (gamma <= -69) {
+} else if (gamma >= -74 && gamma <=0) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
