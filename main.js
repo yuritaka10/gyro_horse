@@ -1,12 +1,27 @@
-// 10秒後に動画を再生
+// // 10秒後に動画を再生
+// $(function() {
+//   $('#play-btn').click(function() {
+//     alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
+//     setTimeout(function() {
+//       $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+//     }, 10000); // 10秒待機
+//   });
+// });
+
 $(function() {
   $('#play-btn').click(function() {
     alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
-    setTimeout(function() {
-      $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    }, 10000); // 10秒待機
+    var video = $('#video')[0];
+    video.play(); // ビデオ再生を開始する
+    video.addEventListener('playing', function() {
+      setTimeout(function() {
+        $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+      }, 10000); // 再生開始後10秒待機
+    });
   });
 });
+
+
 
 
 // ジャイロセンサーが使用可能だったら
@@ -192,12 +207,8 @@ if (gamma >= -89 && gamma <= -85) {
     background: "linear-gradient(to top, rgba(255,87,51,1), rgba(255,87,51,0))"
   });
 }
-    }
+}
   
-
-
-
-
 // 画面縦横切り替え
 
    $(window).resize(function() 
