@@ -1,3 +1,13 @@
+// 10秒後に動画を再生
+$(function() {
+  $('#play-btn').click(function() {
+    alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
+    setTimeout(function() {
+      $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    }, 10000); // 10秒待機
+  });
+});
+
 
 // ジャイロセンサーが使用可能だったら
 if(window.DeviceOrientationEvent){
@@ -51,7 +61,7 @@ if(window.DeviceOrientationEvent){
       background: "transparent"
     });
 
-  } else if (beta >= -5 && beta <= -8) {
+  } else if (beta >= -8 && beta <= -5) {
     $(".left").css({
       position: "fixed",
       width: "80px",
@@ -59,7 +69,7 @@ if(window.DeviceOrientationEvent){
       background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))"
     });
 
-  } else if (beta >= -9 && beta <= -14) {
+  } else if (beta >= -14 && beta <= -9) {
     $(".left").css({
       position: "fixed",
       width: "80px",
@@ -146,8 +156,8 @@ if (gamma >= 82 && gamma <= 90) {
   });
 }
 
-// Y軸（上下）
-if (gamma <= -82 && gamma >= -90) {
+// Y軸（下）
+if (gamma <= -90 && gamma >= -82) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -155,7 +165,7 @@ if (gamma <= -82 && gamma >= -90) {
     bottom: "0",
     background: "transparent"
   });
-} else if (gamma <= -81 && gamma >= -75) {
+} else if (gamma <= -75 && gamma >= -81) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -164,7 +174,7 @@ if (gamma <= -82 && gamma >= -90) {
     background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
-} else if (gamma <= -74 && gamma >= -70) {
+} else if (gamma <= -70 && gamma >= -74) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
@@ -177,7 +187,7 @@ if (gamma <= -82 && gamma >= -90) {
   $(".bottom").css({
     position: "fixed",
     width: "100%",
-    height: "80px",
+    height: "80px", 
     bottom: "0",
     background: "linear-gradient(to top, rgba(255,87,51,1), rgba(255,87,51,0))"
   });
@@ -186,15 +196,7 @@ if (gamma <= -82 && gamma >= -90) {
   
 
 
-    // 10秒後に動画を再生
-$(function() {
-  $('#play-btn').click(function() {
-    alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
-    setTimeout(function() {
-      $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    }, 10000); // 10秒待機
-  });
-});
+
 
 // 画面縦横切り替え
 
