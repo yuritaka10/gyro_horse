@@ -45,7 +45,6 @@ if(window.DeviceOrientationEvent){
 //X軸（左）
   if (beta > -4) {
     $(".left").css({
-      position: "fixed",
       background: "transparent"
     });
 
@@ -78,8 +77,6 @@ if(window.DeviceOrientationEvent){
   //X軸（右）
   if (beta < 4) {
       $(".right").css({
-        position: "fixed",
-        right: "0",
         background: "transparent"
       });
   } else if (beta >= 5 && beta <= 8) {
@@ -111,11 +108,6 @@ if(window.DeviceOrientationEvent){
 // Y軸（上）
 if (gamma >= 85 && gamma <= 89) {
   $(".top").css({
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "80px",
     background: "transparent"
   });
 
@@ -153,10 +145,6 @@ if (gamma >= 85 && gamma <= 89) {
 // Y軸（下）
 if (gamma >= -89 && gamma <= -85) {
   $(".bottom").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    bottom: "0",
     background: "transparent"
   });
 } else if (gamma >= -84 && gamma <= -81) {
