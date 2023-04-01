@@ -46,8 +46,6 @@ if(window.DeviceOrientationEvent){
   if (beta > -4) {
     $(".left").css({
       position: "fixed",
-      width: "80px",
-      height: "100%",
       background: "transparent"
     });
 
@@ -81,8 +79,6 @@ if(window.DeviceOrientationEvent){
   if (beta < 4) {
       $(".right").css({
         position: "fixed",
-        width: "80px",
-        height: "100%",
         right: "0",
         background: "transparent"
       });
