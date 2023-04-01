@@ -55,7 +55,7 @@ if(window.DeviceOrientationEvent){
       width: "80px",
       height: "100%",
       background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))",
-      "pointer-events": "auto"
+      "pointer-events": "none"
     });
 
   } else if (beta >= -14 && beta <= -9) {
@@ -64,8 +64,8 @@ if(window.DeviceOrientationEvent){
       width: "80px",
       height: "100%",
       background: "linear-gradient(to right, rgba(255,215,0,1), rgba(255,215,0,0))",
-      "pointer-events": "auto"
-    });
+      "pointer-events": "none"
+        });
 
   } else if (beta <= -15) {
   $(".left").css({
@@ -73,8 +73,8 @@ if(window.DeviceOrientationEvent){
     width: "80px",
     height: "100%",
     background: "linear-gradient(to right, rgba(255,87,51,1), rgba(255,87,51,0))",
-    "pointer-events": "auto"
-  });
+    "pointer-events": "none"
+    });
 }
 
 
@@ -91,7 +91,7 @@ if(window.DeviceOrientationEvent){
         height: "100%",
         right: "0",
         background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))",
-        "pointer-events": "auto"
+        "pointer-events": "none"
       });
   } else if (beta >= 9 && beta <= 14) {
       $(".right").css({
@@ -100,8 +100,8 @@ if(window.DeviceOrientationEvent){
         height: "100%",
         right: "0",
         background: "linear-gradient(to left, rgba(255,215,0,1), rgba(255,215,0,0))",
-        "pointer-events": "auto"
-      });
+        "pointer-events": "none"
+          });
   } else if (beta >= 15) {
     $(".right").css({
       position: "fixed",
@@ -109,7 +109,7 @@ if(window.DeviceOrientationEvent){
       height: "100%",
       right: "0",
       background: "linear-gradient(to left, rgba(255,87,51,1), rgba(255,87,51,0))",
-      "pointer-events": "auto"
+      "pointer-events": "none"
     });
     }
 
@@ -128,7 +128,7 @@ if (gamma >= 85 && gamma <= 89) {
     top: "0",
     left: "0",
     background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 
 } else if (gamma >= 75 && gamma <= 80) {
@@ -139,7 +139,7 @@ if (gamma >= 85 && gamma <= 89) {
     top: "0",
     left: "0",
     background: "linear-gradient(to bottom, rgba(255,215,0,1), rgba(255,215,0,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 
 } else if (gamma >= 74) {
@@ -150,7 +150,7 @@ if (gamma >= 85 && gamma <= 89) {
     top: "0",
     left: "0",
     background: "linear-gradient(to bottom, rgba(255,87,51,1), rgba(255,87,51,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 }
 
@@ -167,7 +167,7 @@ if (gamma >= -89 && gamma <= -85) {
     height: "80px",
     bottom: "0",
     background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 
 } else if (gamma >= -80 && gamma <= -75) {
@@ -177,7 +177,7 @@ if (gamma >= -89 && gamma <= -85) {
     height: "80px",
     bottom: "0",
     background: "linear-gradient(to top, rgba(255,215,0,1), rgba(255,215,0,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 
 } else if (gamma >= -74 && gamma <=0) {
@@ -187,7 +187,7 @@ if (gamma >= -89 && gamma <= -85) {
     height: "80px", 
     bottom: "0",
     background: "linear-gradient(to top, rgba(255,87,51,1), rgba(255,87,51,0))",
-    "pointer-events": "auto"
+    "pointer-events": "none"
   });
 }
 }
