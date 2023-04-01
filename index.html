@@ -11,12 +11,12 @@
        rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>    <script>// Set a cross-site cookie for third-party contexts
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>    
+    <script>// Set a cross-site cookie for third-party contexts
       document.cookie = 'cookie1=value1; SameSite=None; Secure';
       </script>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" href="images/icons-192.png">
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
     //サービスワーカー
     if ('serviceWorker' in navigator) {
@@ -30,59 +30,59 @@
     }
     </script>
 
+
+
 </head>
 <body>
   <div class="tate_ui">
-    <header>
-      <div class="title">GYRO HORSE</div>
-    </header>
-    <main>
-    <div class="thumnail">
-      <ul class="horizontal-list">
-        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
-        <!-- <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
-        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
-        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
-        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
-        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li> -->
-      </ul>
-    </div>  
-    <p class="m-title">GoPro: 3rd Place!! Renkum Corsair (Open Intermediate | 2023 Rocking Horse Winter II Horse Trials)
-    </p>
-    <div class="btn gyro">ジャイロセンサーを許可</div>
-    <div class="btn" id="play-btn">10秒後に再生開始</div>
-  </main>
+          <header>
+                <div class="title">Riding in the Room</div>
+          </header>
+          <main>
+                <div class="thumnail">
+                    <ul class="horizontal-list">
+                        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
+                        <!-- <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
+                        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
+                        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
+                        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li>
+                        <li class="item"><img src="https://img.youtube.com/vi/8mW2QBpQ5HY/mqdefault.jpg" /></li> -->
+                    </ul>
+                </div>  
+                <p class="m-title">GoPro: 3rd Place!! Renkum Corsair (Open Intermediate | 2023 Rocking Horse Winter II Horse Trials)
+                </p>
+                <div class="blank"></div>
+                <div class="btn gyro">ジャイロセンサーを許可</div>
+                <p class="discription">「ジャイロセンサーを許可」ボタンをクリックし、画面の向きのロックを解除して横画面にしてご使用ください。</p>
+                <!-- <div class="btn" id="play-btn">10秒後に再生開始</div> -->
+        </main>
+  </div>
+  <div id="countdown"></div>
+  <div class="yoko_ui">
+          <div class="box">
+              <div class="youtube-wrapper" >
+                <div id="player"></div>
+                   <iframe id="player" src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <div class="bottom-right">
+                        <ul class="txt">
+                            <li class="beta">X軸（-90~270までの値）<span>0</span></li>
+                            <li class="gamma">Y軸（-90~90までの値）<span>0</span></li>
+                            <li class="alpha">Z軸（0~360までの値）<span>0</span></li>
+                        </ul>
+                    </div>
+                    <div class="left"></div>
+                    <div class="right"></div>
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+              </div>
+
+        </div>
+
   </div>
 
-   <div class="yoko_ui">
-    <div class="box">
-      <div class="youtube-wrapper" >
-        <iframe id="video" src="https://www.youtube-nocookie.com/embed/8mW2QBpQ5HY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   
 
-        <div class="bottom-right">
-          <ul class="txt">
-          <li class="beta">X軸（-90~270までの値）<span>0</span></li>
-          <li class="gamma">Y軸（-90~90までの値）<span>0</span></li>
-          <li class="alpha">Z軸（0~360までの値）<span>0</span></li>
-          </ul>
-          </div>
-
-          <div class="left"></div>
-          <div class="right"></div>
-          <div class="top"></div>
-          <div class="bottom"></div>
-      </div>
+  <script src="main.js"></script>
 
 
-
-
-
-    </div>
-
-
-   <script src="main.js"></script>
-
-  </div>
 </body>
 </html>

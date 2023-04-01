@@ -1,28 +1,3 @@
-// // 10秒後に動画を再生
-// $(function() {
-//   $('#play-btn').click(function() {
-//     alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
-//     setTimeout(function() {
-//       $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-//     }, 10000); // 10秒待機
-//   });
-// });
-
-$(function() {
-  $('#play-btn').click(function() {
-    alert("十秒後に再生されますので、画面の向きのロックを解除して横画面にしてください。");
-    var video = $('#video')[0];
-    video.play(); // ビデオ再生を開始する
-    video.addEventListener('playing', function() {
-      setTimeout(function() {
-        $('#video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-      }, 10000); // 再生開始後10秒待機
-    });
-  });
-});
-
-
-
 
 // ジャイロセンサーが使用可能だったら
 if(window.DeviceOrientationEvent){
@@ -141,6 +116,8 @@ if(window.DeviceOrientationEvent){
 if (gamma >= 85 && gamma <= 89) {
   $(".top").css({
     position: "fixed",
+    top: "0",
+    left: "0",
     width: "100%",
     height: "80px",
     background: "transparent"
@@ -151,6 +128,8 @@ if (gamma >= 85 && gamma <= 89) {
     position: "fixed",
     width: "100%",
     height: "80px",
+    top: "0",
+    left: "0",
     background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))"
   });
 
@@ -159,6 +138,8 @@ if (gamma >= 85 && gamma <= 89) {
     position: "fixed",
     width: "100%",
     height: "80px",
+    top: "0",
+    left: "0",
     background: "linear-gradient(to bottom, rgba(255,215,0,1), rgba(255,215,0,0))"
   });
 
@@ -167,6 +148,8 @@ if (gamma >= 85 && gamma <= 89) {
     position: "fixed",
     width: "100%",
     height: "80px",
+    top: "0",
+    left: "0",
     background: "linear-gradient(to bottom, rgba(255,87,51,1), rgba(255,87,51,0))"
   });
 }
@@ -238,8 +221,8 @@ if (gamma >= -89 && gamma <= -85) {
        console.log("横画面");
        $(".yoko_ui").css("display", "block");
        $(".tate_ui").css("display", "none");
-
      }
    }
+
 
 
