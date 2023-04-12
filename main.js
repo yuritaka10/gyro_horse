@@ -43,18 +43,9 @@ if(window.DeviceOrientationEvent){
 //ジャイロ可視化
 
 //X軸（左）
-  if (beta > -4) {
+  if (beta > -8) {
     $(".left").css({
       background: "transparent",
-      "pointer-events": "none"
-    });
-
-  } else if (beta >= -8 && beta <= -5) {
-    $(".left").css({
-      position: "fixed",
-      width: "80px",
-      height: "100%",
-      background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))",
       "pointer-events": "none"
     });
 
@@ -63,11 +54,20 @@ if(window.DeviceOrientationEvent){
       position: "fixed",
       width: "80px",
       height: "100%",
+      background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))",
+      "pointer-events": "none"
+    });
+
+  } else if (beta >= -20 && beta <= -15) {
+    $(".left").css({
+      position: "fixed",
+      width: "80px",
+      height: "100%",
       background: "linear-gradient(to right, rgba(255,215,0,1), rgba(255,215,0,0))",
       "pointer-events": "none"
         });
 
-  } else if (beta <= -15) {
+  } else if (beta <= -21) {
   $(".left").css({
     position: "fixed",
     width: "80px",
@@ -79,18 +79,9 @@ if(window.DeviceOrientationEvent){
 
 
   //X軸（右）
-  if (beta < 4) {
+  if (beta < 8) {
       $(".right").css({
         background: "transparent",
-        "pointer-events": "none"
-      });
-  } else if (beta >= 5 && beta <= 8) {
-      $(".right").css({
-        position: "fixed",
-        width: "80px",
-        height: "100%",
-        right: "0",
-        background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))",
         "pointer-events": "none"
       });
   } else if (beta >= 9 && beta <= 14) {
@@ -99,10 +90,19 @@ if(window.DeviceOrientationEvent){
         width: "80px",
         height: "100%",
         right: "0",
+        background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))",
+        "pointer-events": "none"
+      });
+  } else if (beta >= 15 && beta <= 20) {
+      $(".right").css({
+        position: "fixed",
+        width: "80px",
+        height: "100%",
+        right: "0",
         background: "linear-gradient(to left, rgba(255,215,0,1), rgba(255,215,0,0))",
         "pointer-events": "none"
           });
-  } else if (beta >= 15) {
+  } else if (beta >= 21) {
     $(".right").css({
       position: "fixed",
       width: "80px",
