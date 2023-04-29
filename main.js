@@ -43,20 +43,20 @@ if(window.DeviceOrientationEvent){
 //ジャイロ可視化
 
 //X軸（左）
-  if (beta > -8) {
+  if (beta > -14) {
     $(".left").css({
       background: "transparent",
       "pointer-events": "none"
     });
 
-  } else if (beta >= -14 && beta <= -9) {
-    $(".left").css({
-      position: "fixed",
-      width: "80px",
-      height: "100%",
-      background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))",
-      "pointer-events": "none"
-    });
+  // } else if (beta >= -14 && beta <= -9) {
+  //   $(".left").css({
+  //     position: "fixed",
+  //     width: "80px",
+  //     height: "100%",
+  //     background: "linear-gradient(to right, rgba(127,255,0,1), rgba(127,255,0,0))",
+  //     "pointer-events": "none"
+  //   });
 
   } else if (beta >= -20 && beta <= -15) {
     $(".left").css({
@@ -79,20 +79,20 @@ if(window.DeviceOrientationEvent){
 
 
   //X軸（右）
-  if (beta < 8) {
+  if (beta < 14) {
       $(".right").css({
         background: "transparent",
         "pointer-events": "none"
       });
-  } else if (beta >= 9 && beta <= 14) {
-      $(".right").css({
-        position: "fixed",
-        width: "80px",
-        height: "100%",
-        right: "0",
-        background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))",
-        "pointer-events": "none"
-      });
+  // } else if (beta >= 9 && beta <= ) {
+  //     $(".right").css({
+  //       position: "fixed",
+  //       width: "80px",
+  //       height: "100%",
+  //       right: "0",
+  //       background: "linear-gradient(to left, rgba(127,255,0,1), rgba(127,255,0,0))",
+  //       "pointer-events": "none"
+  //     });
   } else if (beta >= 15 && beta <= 20) {
       $(".right").css({
         position: "fixed",
@@ -114,22 +114,22 @@ if(window.DeviceOrientationEvent){
     }
 
 // Y軸（上）
-if (gamma >= 85 && gamma <= 89) {
+if (gamma >= 81 && gamma <= 89) {
   $(".top").css({
     background: "transparent",
     "pointer-events": "none"
   });
 
-} else if (gamma >= 81 && gamma <= 84) {
-  $(".top").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    top: "0",
-    left: "0",
-    background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))",
-    "pointer-events": "none"
-  });
+// } else if (gamma >= 81 && gamma <= 84) {
+//   $(".top").css({
+//     position: "fixed",
+//     width: "100%",
+//     height: "80px",
+//     top: "0",
+//     left: "0",
+//     background: "linear-gradient(to bottom, rgba(127,255,0,1), rgba(127,255,0,0))",
+//     "pointer-events": "none"
+//   });
 
 } else if (gamma >= 75 && gamma <= 80) {
   $(".top").css({
@@ -155,20 +155,20 @@ if (gamma >= 85 && gamma <= 89) {
 }
 
 // Y軸（下）
-if (gamma >= -89 && gamma <= -85) {
+if (gamma >= -89 && gamma <= -81) {
   $(".bottom").css({
     background: "transparent",
     "pointer-events": "none"
   });
-} else if (gamma >= -84 && gamma <= -81) {
-  $(".bottom").css({
-    position: "fixed",
-    width: "100%",
-    height: "80px",
-    bottom: "0",
-    background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))",
-    "pointer-events": "none"
-  });
+// } else if (gamma >= -84 && gamma <= -81) {
+//   $(".bottom").css({
+//     position: "fixed",
+//     width: "100%",
+//     height: "80px",
+//     bottom: "0",
+//     background: "linear-gradient(to top, rgba(127,255,0,1), rgba(127,255,0,0))",
+//     "pointer-events": "none"
+//   });
 
 } else if (gamma >= -80 && gamma <= -75) {
   $(".bottom").css({
