@@ -155,7 +155,7 @@ if (gamma >= 81 && gamma <= 89) {
 }
 
 // Y軸（下）
-if (gamma >= -89 && gamma <= -81) {
+if (gamma >= -89 && gamma <= -75) {
   $(".bottom").css({
     background: "transparent",
     "pointer-events": "none"
